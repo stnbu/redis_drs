@@ -10,15 +10,14 @@ except ImportError:
 class TestAll(unittest.TestCase):
 
     def setUp(self):
-        self.locker = redis_drs.Locker(resource_signature='myresourcesig', unix_socket_path='/usr/local/var/run/redis.sock')
+        self.locker = redis_drs.Locker(resource_signature='myresourcesig')
 
     def test_all(self):
         self.locker.lock(resource_info={'bob', 'mary'})
         self.locker.get()
         self.locker.update({'7':99})
         self.locker.get()
-        #self.locker.unlock()
-
+        self.locker.unlock()
 
 if __name__ == '__main__':
    unittest.main()
