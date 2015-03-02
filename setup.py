@@ -17,7 +17,7 @@ def read(file):
 setup(
     name=NAME,
     version=read('VERSION'),
-    description='',
+    description='A Distributed Resource Scheduling system that uses Redis.',
     long_description=read('README.rst'),
     author='Mike Burr',
     author_email='mburr@unintuitive.org',
@@ -27,7 +27,11 @@ setup(
     license='MIT',
     classifiers=[
         'Development Status :: 4 - Beta',
+        'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
+        'Operating System :: OS Independent',
+        'Programming Language :: Python :: 2',
+        'Programming Language :: Python',
     ],
     packages=[NAME],
     keywords=[],
