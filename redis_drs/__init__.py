@@ -8,4 +8,10 @@ be associated with the resource_signature.
 This package is heavily based upon the "redlock-py" package: https://github.com/SPSCommerce/redlock-py
 """
 
-from .main import *
+try:
+    from .main import *
+    from .monitor import *
+except ImportError:
+    import os
+    if os.environ.get('I_AM_SETUP_SENTINEL') is None:
+        raise

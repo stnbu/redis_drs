@@ -1,8 +1,11 @@
 # -*- coding: utf-8 -*-
 
 from setuptools import setup
+import os
 
+os.environ['I_AM_SETUP_SENTINEL'] = ''  # hack. see redis_drs.__init__.py
 import redis_drs
+del os.environ['I_AM_SETUP_SENTINEL']
 
 # README.rst dynamically generated:
 with open('README.rst', 'w') as f:
@@ -37,4 +40,5 @@ setup(
     keywords=[],
     test_suite='test',
     requires=['redis'],
+    setup_requires=['redis'],
 )
